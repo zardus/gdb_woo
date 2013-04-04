@@ -4,8 +4,13 @@
 int decrypt_key(char *k)
 {
 	int l;
+	char cur;
 	for (l = strlen(k) - 1; l>=0; l--)
-		k[l] += 13;
+	{
+		cur = k[l];
+		cur = ((cur + 13) % 26) + 32;
+		k[l] = cur;
+	}
 }
 
 int main(int argc, char **argv)
