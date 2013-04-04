@@ -8,7 +8,7 @@ int decrypt_key(char *k)
 	for (l = strlen(k) - 1; l>=0; l--)
 	{
 		cur = k[l];
-		cur = (cur + 13) % 26;
+		cur = ((cur + 13) % 26) + 32;
 		k[l] = cur;
 	}
 }
